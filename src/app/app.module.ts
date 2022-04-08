@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './Property/property-card/property-card.component';
 import { PropertListComponent } from './Property/propert-list/propert-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-
+import{HousingServicesService} from './Services/HousingServices.service'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     PropertyCardComponent,
     PropertListComponent,
@@ -16,9 +17,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HousingServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
